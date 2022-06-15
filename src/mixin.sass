@@ -1,0 +1,53 @@
+=bounds()
+  background: rgba(random(255), random(255), random(255), 0.3)
+  outline: 1px solid rgb(random(255), random(255), random(255))
+
+=hide()
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  border: 0
+  padding: 0
+  clip: rect(0 0 0 0)
+  overflow: hidden
+
+=shadow()
+  box-shadow: 0px 2px 12px 0px rgba(71,71,71,0.3)
+
+// =animation-heartbeat()
+//   @keyframes heartbeat
+//     0%
+//       transform: scale(1)
+//       transform-origin: center center
+//       animation-timing-function: ease-out
+//     10%
+//       transform: scale(0.91)
+//       animation-timing-function: ease-in
+//     20%
+//       transform: scale(0.98)
+//       animation-timing-function: ease-out
+//     30%
+//       transform: scale(0.87)
+//       animation-timing-function: ease-in
+//     40%
+//       transform: scale(1)
+//       animation-timing-function: ease-out
+
+//   animation-name: heartbeat
+//   animation-duration: 4s
+//   animation-iteration-count: infinite
+//   animation-timing-function: ease-in-out
+//   animation-direction: both
+
+=animation-slide-in-top()
+  @keyframes slide-in-top
+    0%
+      transform: translate(-50%, -100px)
+      opacity: 0
+    100%
+      transform: translate(-50%, 0)
+      opacity: 1
+
+  animation-name: slide-in-top
+  animation-duration: 0.3s
