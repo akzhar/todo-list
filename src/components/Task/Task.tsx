@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-type TTask = {
-  id: string,
-  text: string,
-  isCompleted?: boolean,
+import { TTask } from '@store/reducerTasks';
+
+type TTaskProps = {
+  data: TTask,
   changeHandler?: () => void
 };
 
-const Task: React.FC<TTask> = ({ id, text, isCompleted, changeHandler }) => (
-  <li className="task">
-    <input id={id} type="checkbox" checked={isCompleted} onChange={changeHandler}/>
-    <label htmlFor={id}>{text}</label>
-  </li>
-);
+const Task: React.FC<TTaskProps> = ({ data, changeHandler }) => {
+
+  const [isChecked, setIsChecked] = useState<boolean | undefined>(data.isCompleted);
+
+  return (
+    <li className="task">
+      <input
+        id={data.id}
+        type="checkbox" checked={isChecked}
+        onChange={() => {
+          setIsChecked(!isChecked);
+          if (changeHandler) {
+            changeHandler();
+          }
+        }}
+        />
+      <label htmlFor={data.id}>{data.text}</label>
+    </li>
+  );
+
+}
 
 export default Task;
