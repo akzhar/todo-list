@@ -1,3 +1,7 @@
+import createID from '@utils/createID';
+
+import { TTask } from '@store/reducerTasks';
+
 export type TAction = {
   type: string,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -13,9 +17,9 @@ export enum ActionTypes {
   HIDE_MESSAGE = 'hide message',
   // tasks
   CREATE_TASK = 'create task',
-  CLOSE_TASK = 'close task',
-  OPEN_TASK = 'open task',
+  TOGGLE_TASK_STATUS = 'toggle task status',
   CLEAR_COMPLETED_TASKS = 'clear completed tasks',
+  //EDIT_TASK = 'edit task',
 }
 
 interface ISetMessage {
@@ -23,20 +27,19 @@ interface ISetMessage {
   text?: string
 }
 
-interface ICreateTask {}
+interface ICreateTask {
+  text: string
+}
+interface IToggleTaskStatus {
+  id: string
+}
 
-interface ICloseTask {}
-
-interface IOpenTask {}
-
-interface IClearCompletedTasks {}
+//interface IEditTask {
+//  id: string,
+//  text: string
+//}
 
 const ActionCreator = {
-  reset: () => {
-    return (dispatch: (action: TAction) => void) => {
-      dispatch({ type: ActionTypes.RESET_MESSAGE});
-    }
-  },
   setInfoMessage: ({ label, text }: ISetMessage) => {
     return (dispatch: (action: TAction) => void) => {
       dispatch({ type: ActionTypes.SET_INFO_MESSAGE, payload: { label, text } });
@@ -55,18 +58,14 @@ const ActionCreator = {
       }, 1500);
     }
   },
-  createTask: (params: ICreateTask) => {
-    return { type: ActionTypes.CREATE_TASK, payload: '' };
+  createTask: ({ text }: ICreateTask) => {
+    const id = createID();
+    const newTask: TTask = { id, text, isCompleted: false};
+    return { type: ActionTypes.CREATE_TASK, payload: newTask };
   },
-  closeTask: (params: ICloseTask) => {
-    return { type: ActionTypes.CLOSE_TASK, payload: '' };
-  },
-  openTask: (params: IOpenTask) => {
-    return { type: ActionTypes.OPEN_TASK, payload: '' };
-  },
-  clearCompletedTasks: (params: IClearCompletedTasks) => {
-    return { type: ActionTypes.CLEAR_COMPLETED_TASKS, payload: '' };
-  }
+  toggleTaskStatus: ({ id }: IToggleTaskStatus) => ({ type: ActionTypes.TOGGLE_TASK_STATUS, payload: id }),
+  clearCompletedTasks: () => ({ type: ActionTypes.CLEAR_COMPLETED_TASKS })
+  //editTask: ({ id, text }: IEditTask) => {{ type: ActionTypes.EDIT_TASK, payload: { id, text } }),
 };
 
 export default ActionCreator;
