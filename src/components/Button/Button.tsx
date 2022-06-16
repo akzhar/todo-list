@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-type TButton = {
+type TButtonProps = {
   title: string,
   clickHandler?: () => void,
   url?: string
 };
 
-const Button: React.FC<TButton> = ({title, clickHandler, url}) => {
+const Button: React.FC<TButtonProps> = ({title, clickHandler, url}) => {
 
   const location = useLocation();
 
