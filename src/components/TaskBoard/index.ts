@@ -1,4 +1,3 @@
-import TaskBoard, {ViewType} from './TaskBoard';
+import TaskBoard from './TaskBoard';
 
-export {ViewType};
 export default TaskBoard;

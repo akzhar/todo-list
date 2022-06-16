@@ -9,9 +9,9 @@ type TButtonProps = {
 
 const Button: React.FC<TButtonProps> = ({title, clickHandler, url}) => {
 
-  const location = useLocation();
+  const { pathname } = useLocation();
 
-  const isActive = Boolean(location.pathname === url)
+  const isActive = Boolean(pathname === url)
 
   return (
     <>
@@ -23,6 +23,6 @@ const Button: React.FC<TButtonProps> = ({title, clickHandler, url}) => {
       }
     </>
   );
-}
+};
 
 export default Button;

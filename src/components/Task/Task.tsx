@@ -27,6 +27,6 @@ const Task: React.FC<TTaskProps> = ({ data, changeHandler }) => {
     </li>
   );
 
-}
+};
 
 export default Task;
