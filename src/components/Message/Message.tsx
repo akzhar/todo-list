@@ -11,7 +11,7 @@ const Message: React.FC = () => {
     <>
       {
         isVisible &&
-        <div className={`message ${isWarning && 'message--warning'}`}>
+        <div className={`message ${isWarning ? 'message--warning' : ''}`}>
           <b>{label}</b> {text}
         </div>
       }

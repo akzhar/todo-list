@@ -5,5 +5,5 @@ type TAppRoute = {
 export const AppRoutes: TAppRoute = {
   ALL: '/',
   ACTIVE: '/active',
-  COMPLETED: '/COMPLETED'
+  COMPLETED: '/completed'
 };
