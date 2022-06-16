@@ -1,10 +1,12 @@
 import React from 'react';
 
+import Logo from '@components/Logo';
 import TaskBoard from '@components/TaskBoard';
 
 const AllPage: React.FC = () => (
   <>
-    <h1 className="visually-hidden">Список всех задач</h1>
+    <Logo />
+    <h1 className="visually-hidden">All tasks</h1>
     <TaskBoard />
   </>
 );

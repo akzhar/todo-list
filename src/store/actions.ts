@@ -19,7 +19,6 @@ export enum ActionTypes {
   CREATE_TASK = 'create task',
   TOGGLE_TASK_STATUS = 'toggle task status',
   CLEAR_COMPLETED_TASKS = 'clear completed tasks',
-  //EDIT_TASK = 'edit task',
 }
 
 interface ISetMessage {
@@ -33,11 +32,6 @@ interface ICreateTask {
 interface IToggleTaskStatus {
   id: string
 }
-
-//interface IEditTask {
-//  id: string,
-//  text: string
-//}
 
 const ActionCreator = {
   setInfoMessage: ({ label, text }: ISetMessage) => {
@@ -65,7 +59,6 @@ const ActionCreator = {
   },
   toggleTaskStatus: ({ id }: IToggleTaskStatus) => ({ type: ActionTypes.TOGGLE_TASK_STATUS, payload: id }),
   clearCompletedTasks: () => ({ type: ActionTypes.CLEAR_COMPLETED_TASKS })
-  //editTask: ({ id, text }: IEditTask) => {{ type: ActionTypes.EDIT_TASK, payload: { id, text } }),
 };
 
 export default ActionCreator;

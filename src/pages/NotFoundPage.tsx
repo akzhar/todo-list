@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+import Logo from '@components/Logo';
 import ActionCreator from '@store/actions';
 
 const NotFoundPage: React.FC = () => {
@@ -10,16 +11,20 @@ const NotFoundPage: React.FC = () => {
   React.useEffect(() => {
     dispatch(ActionCreator.setWarningMessage(
       {
-        label: '404:',
-        text: 'Запрошенный ресурс не был найден...'
+        label: '😥',
+        text: '404 - The requested resource was not found...'
       }
     ));
   });
 
   return (
-    <p style={{ textAlign: 'center'}}>
-      Кажется, такой страницы не существует...
-    </p>
+    <>
+      <Logo enableLink />
+      <h1 className="visually-hidden">404 page</h1>
+      <p style={{ textAlign: 'center'}}>
+        {'It seems there isn\'t such page...'}
+      </p>
+    </>
   )
 };
 

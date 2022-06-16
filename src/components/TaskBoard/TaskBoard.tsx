@@ -41,7 +41,7 @@ const TaskBoard: React.FC<TaskBoardProps> = ({viewType = ViewType.ALL}) => {
 
   const clearCompletedTasks = useCallback(() => {
     dispatch(ActionCreator.clearCompletedTasks());
-    dispatch(ActionCreator.setInfoMessage({ label: '😊', text: 'Выполненные таски удалены' }));
+    dispatch(ActionCreator.setInfoMessage({ label: '😊', text: 'All completed tasks were cleared' }));
   }, []);
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -52,7 +52,7 @@ const TaskBoard: React.FC<TaskBoardProps> = ({viewType = ViewType.ALL}) => {
     if(evt.key === 'Enter' && inputHasFocus && inputHasValue) {
       if (inputRef.current) {
         dispatch(ActionCreator.createTask({ text: inputRef.current.value }));
-        dispatch(ActionCreator.setInfoMessage({ label: '😊', text: 'Новая таска добавлена в список' }));
+        dispatch(ActionCreator.setInfoMessage({ label: '😊', text: 'New task was added to the list' }));
         inputRef.current.value = '';
       }
     }
