@@ -10,11 +10,11 @@ export type TTasksState = {
   items: TTask[]
 };
 
-const initialState: TTasksState = {
+export const initialTasksState: TTasksState = {
   items: []
 };
 
-const reducerTasks = (state: TTasksState = initialState, action: TAction) => {
+const reducerTasks = (state: TTasksState = initialTasksState, action: TAction) => {
   switch (action.type) {
     case ActionTypes.CREATE_TASK: {
       const newTask = action.payload;

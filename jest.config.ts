@@ -94,7 +94,8 @@ export default {
     '@consts/(.*)': '<rootDir>/src/consts/$1',
     '@hooks/(.*)': '<rootDir>/src/hooks/$1',
     '@store/(.*)': '<rootDir>/src/store/$1',
-    '@utils/(.*)': '<rootDir>/src/utils/$1'
+    '@utils/(.*)': '<rootDir>/src/utils/$1',
+    '@services/(.*)': '<rootDir>/src/services/$1'
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

@@ -7,17 +7,17 @@ export type TMessageState = {
   text: string
 };
 
-const initialState: TMessageState = {
+export const initialMassageState: TMessageState = {
   isVisible: false,
   isWarning: false,
   label: '',
   text: ''
 };
 
-const reducerMessage = (state: TMessageState = initialState, action: TAction) => {
+const reducerMessage = (state: TMessageState = initialMassageState, action: TAction) => {
   switch (action.type) {
     case ActionTypes.RESET_MESSAGE: {
-      return initialState;
+      return initialMassageState;
     }
     case ActionTypes.SET_WARNING_MESSAGE: {
       const { label, text } = action.payload;

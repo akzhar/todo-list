@@ -1,0 +1,25 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const throttle = (fn: () => any, wait = 300) => {
+  let inThrottle: boolean;
+  let lastFn: ReturnType<typeof setTimeout>;
+  let lastTime: number;
+  return function (this: any, ...args: any) {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    const context = this;
+    if (!inThrottle) {
+      fn.apply(context, args);
+      lastTime = Date.now();
+      inThrottle = true;
+    } else {
+      clearTimeout(lastFn);
+      lastFn = setTimeout(() => {
+        if (Date.now() - lastTime >= wait) {
+          fn.apply(context, args);
+          lastTime = Date.now();
+        }
+      }, Math.max(wait - (Date.now() - lastTime), 0));
+    }
+  };
+};
+
+export default throttle;
