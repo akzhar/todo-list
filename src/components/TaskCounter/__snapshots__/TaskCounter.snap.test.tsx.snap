@@ -1,11 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TaskCounter should render correctly 1`] = `
+exports[`TaskCounter should render correct active task count If 0 task left, it should be in the plural 1`] = `
+<div>
+  <span
+    class="task-counter"
+  >
+    0 items 
+  </span>
+</div>
+`;
+
+exports[`TaskCounter should render correct active task count If 1 task left, it should be in the singular 1`] = `
 <div>
   <span
     class="task-counter"
   >
     1 item 
+  </span>
+</div>
+`;
+
+exports[`TaskCounter should render correct active task count If 2 task left, it should be in the plural 1`] = `
+<div>
+  <span
+    class="task-counter"
+  >
+    2 items 
+  </span>
+</div>
+`;
+
+exports[`TaskCounter should render correct active task count If 12 task left, it should be in the plural 1`] = `
+<div>
+  <span
+    class="task-counter"
+  >
+    12 items 
   </span>
 </div>
 `;

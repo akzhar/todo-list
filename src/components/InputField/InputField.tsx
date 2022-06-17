@@ -29,7 +29,7 @@ const InputField: React.FC = () => {
 
   return (
     <div className="input-field">
-      <input type="text" id="task-input" placeholder="What needs to be done?" ref={inputRef} />
+      <input type="text" id="task-input" data-testid="task-input" placeholder="What needs to be done?" ref={inputRef} />
     </div>
   );
 };

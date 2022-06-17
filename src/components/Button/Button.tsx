@@ -17,7 +17,13 @@ const Button: React.FC<TButtonProps> = ({title, clickHandler, url}) => {
     <>
       {
         url ?
-        <Link to={url} className={`button ${isActive ? 'button--active' : ''}`}>{title}</Link>
+        <Link
+          to={url}
+          className={`button ${isActive ? 'button--active' : ''}`}
+          aria-current={isActive}
+        >
+          {title}
+        </Link>
         :
         <button type="button" className="button" onClick={clickHandler}>{title}</button>
       }

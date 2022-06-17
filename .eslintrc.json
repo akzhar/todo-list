@@ -14,14 +14,16 @@
     "plugin:import/typescript",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "plugin:jest-dom/recommended"
   ],
   "plugins": [
     "@typescript-eslint",
     "import",
     "react",
     "jsx-a11y",
-    "react-hooks"
+    "react-hooks",
+    "jest-dom"
   ],
   "settings": {
     "react": {

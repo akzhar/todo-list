@@ -29,4 +29,11 @@ describe('Tasks action creators should return correct action', () => {
     expect(ActionCreator.toggleTaskStatus({ id })).toEqual(expectedAction);
    });
 
+  test('Clear all completed tasks', () => {
+    const expectedAction = {
+      type: ActionTypes.CLEAR_COMPLETED_TASKS
+    };
+    expect(ActionCreator.clearCompletedTasks()).toEqual(expectedAction);
+   });
+
 });
