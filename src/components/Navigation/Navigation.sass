@@ -3,13 +3,11 @@
   justify-content: center
   margin-bottom: 20px
 
-  @media(min-width: $width-mobile)
-    margin-bottom: 0
-
-  & .button
-
-    &:first-child
-      margin-left: 0
+  & > .button
+    margin-left: 10px
 
     &:last-child
-      margin-left: 10px
+      margin-left: 0
+
+  @media(min-width: $width-mobile)
+    margin-bottom: 0
