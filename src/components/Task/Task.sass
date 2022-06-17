@@ -6,9 +6,15 @@
   & input[type="checkbox"]
     +hide()
 
+    &:focus-visible + label
+      outline-color: $color-grey-dark
+      outline-offset: -2px
+      outline-style: auto
+      outline-width: 5px
+
     & + label
       display: block
-      padding: 20px 0
+      padding: 20px 5px
 
       &:hover
         cursor: pointer
@@ -19,7 +25,7 @@
         width: 22px
         height: 22px
         top: 50%
-        left: 15.5px
+        left: 15px
         transform: translateY(-50%)
         border: 2px solid $color-grey-light
         border-radius: 50%
