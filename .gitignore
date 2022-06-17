@@ -11,6 +11,7 @@ Thumbs.db
 # Вспомогательные файлы
 *.log*
 node_modules/
+coverage/
 
 # Env файл
 .env
