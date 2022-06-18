@@ -1,4 +1,4 @@
-import { TState, initialState } from '@store/reducer';
+import { TTasksState, initialTasksState } from '@store/reducerTasks';
 
 class Storage {
 
@@ -15,16 +15,16 @@ class Storage {
     return this._instance;
   }
 
-  getState(): TState {
-      const str = localStorage.getItem('state');
+  getState(): TTasksState {
+      const str = localStorage.getItem('tasks');
       if (str) {
         return JSON.parse(str);
       }
-      return initialState;
+      return initialTasksState;
   }
 
-  saveState(state: TState) {
-    localStorage.setItem('state', JSON.stringify(state));
+  saveState(state: TTasksState) {
+    localStorage.setItem('tasks', JSON.stringify(state));
   }
 
 }

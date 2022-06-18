@@ -8,7 +8,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import Storage from '@services/Storage';
 import throttle from 'utils/throttle';
 
-import reducer, { TState } from '@store/reducer';
+import reducer, { TState, initialState } from '@store/reducer';
+import { TTasksState } from '@store/reducerTasks';
 
 import App from './App';
 
@@ -16,18 +17,19 @@ import './index.sass';
 
 const storage = new Storage();
 
-const persistedState : TState = storage.getState();
+const savedTasksState : TTasksState = storage.getState();
 
 const store: Store<TState> = createStore(
   reducer,
-  persistedState,
+  {...initialState, tasks: savedTasksState },
   composeWithDevTools(
     applyMiddleware(thunk)
   )
 );
 
 const saveState = throttle(() => {
-  storage.saveState(store.getState());
+  const { tasks } = store.getState();
+  storage.saveState(tasks);
 }, 1000);
 
 store.subscribe(saveState);
