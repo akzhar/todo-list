@@ -28,7 +28,7 @@ const store: Store<TState> = createStore(
 
 const saveState = throttle(() => {
   storage.saveState(store.getState());
-}, 5000);
+}, 1000);
 
 store.subscribe(saveState);
 
