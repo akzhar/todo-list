@@ -8,7 +8,13 @@ type TLogoProps = {
 };
 
 const Logo: React.FC<TLogoProps> = ({ enableLink = false }) => (
-  <Link to={AppRoutes.ALL} className={`logo ${enableLink ? 'logo--link' : ''}`}>Todos</Link>
+  <Link
+    to={AppRoutes.ALL}
+    className={`logo ${enableLink ? 'logo--link' : ''}`}
+    tabIndex={enableLink ? 0 : -1}
+  >
+    Todos
+  </Link>
 );
 
 export default Logo;

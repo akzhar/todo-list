@@ -20,6 +20,7 @@ const Button: React.FC<TButtonProps> = ({title, clickHandler, url}) => {
         <Link
           to={url}
           className={`button ${isActive ? 'button--active' : ''}`}
+          tabIndex={isActive ? -1 : 0}
           aria-current={isActive}
         >
           {title}
