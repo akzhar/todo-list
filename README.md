@@ -1,23 +1,18 @@
-# Todos
+# Todo list
 
-- [Опубликованное приложение](https://todos-akzhario.herokuapp.com/)
-- [Дизайн](https://docs.google.com/document/d/1X9zMnAAU9vvEzdYtSEeeram8Kur5o-py5ChKlK5TIa8/edit)
+- [Open the app](https://todos-akzhario.herokuapp.com)
+- [Design](https://docs.google.com/document/d/1X9zMnAAU9vvEzdYtSEeeram8Kur5o-py5ChKlK5TIa8/edit)
 
-## 1. Установка зависимостей
-Находясь в корневой папке проекта, выполните команду:
-`npm i`
+## 1. Description
+- To add new task just type what needs to be done and press the Enter
+- There are 3 types of task list view: All, Active, Completed
+- There is a button to clear the list of completed tasks
 
-## 2. Запуск приложения в dev режиме
-Находясь в корневой папке проекта, выполните команду:
-`npm run start`
+## 2. Install dependencies
+`git clone repo_url` → `cd ./repo-folder` → `npm install`
 
-## 3. Запуск собранного приложения
-Находясь в корневой папке проекта, выполните команды:
-1. `npm run build` (дождитесь завершения сборки)
-1. `cd public`
-2. `npm start`
+## 3. Run the app in development mode
+`cd ./repo-folder` → `npm run start`
 
-## 4. Описание функционала
-- Поле для ввода новой задачи по нажатию клавишы Enter
-- 3 представления списка задач: все, невыполненные, выполненные
-- Кнопка для очистки списка от выполненных задач
+## 4. Build and run the app
+`npm run build` (wait) → `cd public` → `npm run start`
