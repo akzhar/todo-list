@@ -1,7 +1,11 @@
-# Todo list
+# Todo list 📝
 
 - [Open the app](https://todos-akzhario.herokuapp.com)
 - [Design](https://docs.google.com/document/d/1X9zMnAAU9vvEzdYtSEeeram8Kur5o-py5ChKlK5TIa8/edit)
+
+## Demo
+
+<img src="https://raw.githubusercontent.com/akzhar/todo-list/main/demo.gif" alt="demo" title="demo" width="100%"/>
 
 ## 1. Description
 - To add new task just type what needs to be done and press the Enter
