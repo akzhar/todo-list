@@ -1,15 +1,16 @@
 {
-  "name": "todos-test-task",
+  "name": "todo-list",
   "version": "1.0.0",
   "private": true,
   "author": "akzhar.taov@yandex.ru",
-  "description": "todos",
+  "description": "Todo list",
   "scripts": {
-    "start": "node index.js",
-    "deploy": "git add . && git commit -m \"heroku deploy\" && git push heroku master",
-    "logs": "heroku logs --tail",
-    "app-on": "heroku ps:scale web=1",
-    "app-off": "heroku ps:scale web=0"
+    "start": "PORT=3003 node index.js",
+    "service:enable": "systemctl enable todo-list",
+    "service:start": "systemctl start todo-list",
+    "service:stop": "systemctl stop todo-list",
+    "service:restart": "systemctl enable todo-list",
+    "service:status": "systemctl status todo-list"
   },
   "dependencies": {
     "express": "4.17.1"

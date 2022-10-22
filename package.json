@@ -1,9 +1,9 @@
 {
-  "name": "todos-test-task",
+  "name": "todo-list",
   "version": "1.0.0",
   "private": true,
   "author": "akzhar.taov@yandex.ru",
-  "description": "todos",
+  "description": "Todo list",
   "scripts": {
     "test:eslint": "eslint --ext .tsx --ext .ts src/",
     "test:jest": "jest",

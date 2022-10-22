@@ -1,6 +1,6 @@
 # Todo list 📝
 
-- [Open the app](https://todos-akzhario.herokuapp.com)
+- [Open the app](http://80.78.241.253:3003)
 - [Design](https://docs.google.com/document/d/1X9zMnAAU9vvEzdYtSEeeram8Kur5o-py5ChKlK5TIa8/edit)
 
 ## Demo
